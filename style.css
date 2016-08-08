@@ -1,9 +1,9 @@
     #pic { 
         position: absolute;
+        height:60px;
         width: 50px;
-        width: 60px;
         left: 50%;
-        top: 20px;
+        top: 1%;
     }
     
     #ground { 
