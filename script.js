@@ -1,22 +1,29 @@
 //sets element to the variable $pic
-var pic = $("#pic"); 
-var ground=$('#ground');
-var picBottom = pic.top+pic.length;
+var pic = $("#pic");
+var ground = $('#ground');
+var picBottom = pic.top + pic.length;
 var groundTop = ground.top;
-pic.click(function(){setInterval(function(){interval()
-   //Your code goes here
-   function interval(){
-        var num1= console.log("1second");
-        var num2 = pic.top = pic.top + 10;
-        var num3 = $("#pic").css("top", pic.top);
-   }
+$(document).ready(function() {
+    $('#pic').click(function() {
+
+
+        var myVar = setInterval(function() {
+            gravity()
+        }, 1000);
+
+        function gravity() {
+            console.log("1second");
+            $('#pic').top = $('#pic').top + 10;
+            $("#pic").css("top", $('#pic').top);
+        }
+
+        function myStopFunction() {
+            if (picBottom === groundTop) {
+                clearInterval(myVar);
+            }
+        }
+
+
+
     });
-    
-    if(groundTop===picBottom){
-        clearInterval();
-    }
-    
 });
-       
-       
-   
